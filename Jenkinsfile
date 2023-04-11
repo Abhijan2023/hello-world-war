@@ -1,20 +1,19 @@
 pipeline{
-	agent { label 'docker'}
+	agent (label 'docker')
 environment {
 		DOCKER_LOGIN_CREDENTIALS=credentials('abhishekp006')
 	}
     stages {
-  stage('checkout') {
-    steps {
-      git 'https://github.com/Abhijan2023/hello-world-war.git'
-    }
-  }
+  	stage('checkout') {
+    		steps {
+      			git 'https://github.com/Abhijan2023/hello-world-war.git'
+    		}
+  	}
 
   stage('build') {
-    steps {
-      sh 'mvn clean install'
-      sh 'docker build -t abhishekp006/abhishek:$BUILD_NUMBER .' 
-
+    	steps {
+      		sh 'mvn clean install'
+      		sh 'docker build -t abhishekp006/abhishek:$BUILD_NUMBER .' 
     }
   }
 
@@ -30,7 +29,4 @@ environment {
       sh "docker run -itd -p 8080:8080 abhishekp006/abhishek:$BUILD_NUMBER"
     }
   }
-
-}
-
 }
