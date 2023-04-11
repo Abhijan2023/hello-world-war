@@ -26,7 +26,7 @@ environment {
 
   stage('deploy') {
     steps {
-      sh "docker run -itd -p 8080:8080 abhishekp006/abhishek:$BUILD_NUMBER"
+      sh "docker run -itd -p 80:8080 abhishekp006/abhishek:$BUILD_NUMBER"
 }
 }
 }
