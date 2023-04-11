@@ -9,7 +9,7 @@ environment {
       			git 'https://github.com/Abhijan2023/hello-world-war.git'
     		}
   	}
-
+    }
   stage('build') {
     	steps {
       		sh 'mvn clean install'
