@@ -9,7 +9,7 @@ environment {
       			git 'https://github.com/Abhijan2023/hello-world-war.git'
     		}
   	}
-    }
+    
   stage('build') {
     	steps {
       		sh 'mvn clean install'
@@ -29,4 +29,5 @@ environment {
       sh "docker run -itd -p 8080:8080 abhishekp006/abhishek:$BUILD_NUMBER"
     }
   }
+}
 }
