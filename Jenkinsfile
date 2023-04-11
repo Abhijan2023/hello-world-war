@@ -1,5 +1,5 @@
 pipeline{
-    agent tomcat-docker-agent
+	agent { label 'docker'}
 environment {
 		DOCKER_LOGIN_CREDENTIALS=credentials('abhishekp006')
 	}
